@@ -57,7 +57,8 @@ public class RegistrationFormTests {
         $("label[for='hobbies-checkbox-3']").click();
 
         // Picture
-        $("#uploadPicture").uploadFile(new File("D:\\cat.jpg"));
+        $("#uploadPicture").uploadFile(new File("src/test/resources/cat.jpg"));
+        //$("#uploadPicture").uploadFile(new File("D:\\cat.jpg"));
 
         // CurrentAddress
         $("#currentAddress").setValue("USA, New Tork");
@@ -73,7 +74,6 @@ public class RegistrationFormTests {
 
         // submit
         $("#submit").click();
-
 
         // Проверки
         $(".modal-body");

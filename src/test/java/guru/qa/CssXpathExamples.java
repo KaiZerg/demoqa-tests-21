@@ -9,7 +9,6 @@ public class CssXpathExamples {
 
     void cssXpathExample() {
         // <input type="email" class="inputtext login_form_input_box" name="email" id="email" data-testid="email">
-
         // CSS
         $("[data-testid=email]").setValue("1");
         $("input[data-testid=email]").setValue("1");

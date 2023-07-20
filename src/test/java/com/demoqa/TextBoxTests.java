@@ -1,6 +1,5 @@
 package com.demoqa;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -13,9 +12,6 @@ public class TextBoxTests {
 
     @BeforeAll
     static void beforeAll() {
-        //System.out.println("beforeAll()");
-        //open("https://google.com");
-        //Configuration.browser = "chrome";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
     }

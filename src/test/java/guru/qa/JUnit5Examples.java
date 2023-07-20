@@ -7,26 +7,22 @@ public class JUnit5Examples {
     @BeforeAll
     static void beforeAll() {
         System.out.println("beforeAll()");
-        //open("https://google.com");
-        //Configuration.browser = "chrome";
+
     }
 
     @AfterAll
     static void afterAll() {
         System.out.println("afterAll()");
-        //Configuration.browser = "chrome";
     }
 
     @BeforeEach
     void beforeEach() {
         System.out.println("    beforeEach()");
-        //Configuration.browser = "chrome";
     }
 
     @AfterEach
     void afterEach() {
         System.out.println("    afterEach()");
-        //Configuration.browser = "chrome";
     }
 
     @Test

@@ -49,8 +49,6 @@ public class RegistrationFormTests {
         // Subjects
         $("#subjectsInput").setValue("Maths");
         $(".subjects-auto-complete__option").shouldHave(text("Math")).click();
-        // subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3
-        //$(".subjects-auto-complete__input").setValue("math");
 
         // Hobbies buttons
         $("label[for='hobbies-checkbox-1']").click();
@@ -58,7 +56,6 @@ public class RegistrationFormTests {
 
         // Picture
         $("#uploadPicture").uploadFile(new File("src/test/resources/cat.jpg"));
-        //$("#uploadPicture").uploadFile(new File("D:\\cat.jpg"));
 
         // CurrentAddress
         $("#currentAddress").setValue("USA, New Tork");
@@ -75,6 +72,8 @@ public class RegistrationFormTests {
         // submit
         $("#submit").click();
 
+
+        
         // Проверки
         $(".modal-body");
 

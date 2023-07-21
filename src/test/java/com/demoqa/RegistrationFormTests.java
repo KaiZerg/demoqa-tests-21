@@ -39,10 +39,10 @@ public class RegistrationFormTests  extends TestBase {
 
         $("#currentAddress").setValue("USA, New York");
 
-        $("#stateCity-wrapper").$(byText("Select State")).click();
-        $("#react-select-3-option-2").click();
-        $("#stateCity-wrapper").$(byText("Select City")).click();
-        $("#react-select-4-option-0").click();
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
+        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Delhi")).click();
 
         $("#submit").click();
 
@@ -57,7 +57,7 @@ public class RegistrationFormTests  extends TestBase {
         verifyCellValue("Hobbies", "Music");
         verifyCellValue("Picture", "cat.jpg");
         verifyCellValue("Address", "USA, New York");
-        verifyCellValue("State and City", "Haryana Karnal");
+        verifyCellValue("State and City", "NCR Delhi");
     }
 
     private static void verifyCellValue(String label, String value) {

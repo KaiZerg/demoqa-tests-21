@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.demoqa.tests;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -41,6 +41,7 @@ public class RegistrationFormTests  extends TestBase {
 
         $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
+
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
 

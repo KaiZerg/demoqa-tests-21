@@ -2,8 +2,6 @@ package com.demoqa.utils;
 
 import com.github.javafaker.Faker;
 
-import static com.demoqa.utils.TestDataProperties.*;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TestDataMethods {
@@ -12,15 +10,15 @@ public class TestDataMethods {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
-    public static String getRandomFirstName() {
+    public static String getRandomFirstName(Faker fakerEn) {
         return fakerEn.name().firstName();
     }
 
-    public static String getRandomLastName() {
+    public static String getRandomLastName(Faker fakerEn) {
         return fakerEn.name().lastName();
     }
 
-    public static String getRandomEmail() {
+    public static String getRandomEmail(Faker fakerEn) {
         return fakerEn.internet().emailAddress();
     }
 
@@ -29,7 +27,7 @@ public class TestDataMethods {
         return new Faker().options().option(genders);
     }
 
-    public static String getRandomPhoneNumber() {
+    public static String getRandomPhoneNumber(Faker fakerEn) {
         return fakerEn.numerify("##########");
     }
 
@@ -63,7 +61,7 @@ public class TestDataMethods {
         return new Faker().options().option(hobbies);
     }
 
-    public static String getRandomAddress() {
+    public static String getRandomAddress(Faker fakerEn) {
         return fakerEn.address().fullAddress();
     }
 

@@ -2,26 +2,42 @@ package com.demoqa.utils;
 
 import com.github.javafaker.Faker;
 
-import static com.demoqa.utils.TestDataMethods.*;
-
 import java.util.Locale;
 
 public class TestDataProperties {
 
-    static Faker fakerEn = new Faker(new Locale("en"));
+    private Faker fakerEn;
 
-    public static String firstNameValue = getRandomFirstName(),
-            lastNameValue = getRandomLastName(),
-            emailValue = getRandomEmail(),
-            genderValue = getRandomGender(),
-            phoneNumber = getRandomPhoneNumber(),
-            monthValue = getRandomMonth(),
-            yearValue = getRandomYear(),
-            dayValue = getRandomDay(),
-            subjectValue = getRandomSubject(),
-            hobieValue = getRandomHobie(),
-            fileNameValue = "cat.jpg",
-            addressValue = getRandomAddress(),
-            stateValue = getRandomState(),
-            cityValue = getRandomCity(stateValue);
+    public String firstNameValue,
+            lastNameValue,
+            emailValue,
+            genderValue,
+            phoneNumber,
+            monthValue,
+            yearValue,
+            dayValue,
+            subjectValue,
+            hobieValue,
+            fileNameValue,
+            addressValue,
+            stateValue,
+            cityValue;
+
+    public TestDataProperties() {
+        fakerEn = new Faker(new Locale("en"));
+        firstNameValue = TestDataMethods.getRandomFirstName(fakerEn);
+        lastNameValue = TestDataMethods.getRandomLastName(fakerEn);
+        emailValue = TestDataMethods.getRandomEmail(fakerEn);
+        genderValue = TestDataMethods.getRandomGender();
+        phoneNumber = TestDataMethods.getRandomPhoneNumber(fakerEn);
+        monthValue = TestDataMethods.getRandomMonth();
+        yearValue = TestDataMethods.getRandomYear();
+        dayValue = TestDataMethods.getRandomDay();
+        subjectValue = TestDataMethods.getRandomSubject();
+        hobieValue = TestDataMethods.getRandomHobie();
+        fileNameValue = "cat.jpg";
+        addressValue = TestDataMethods.getRandomAddress(fakerEn);
+        stateValue = TestDataMethods.getRandomState();
+        cityValue = TestDataMethods.getRandomCity(stateValue);
+    }
 }

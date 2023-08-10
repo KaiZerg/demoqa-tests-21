@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class RegistrationTestWithFakerJava extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    TestDataProperties testData = new TestDataProperties(); // Create an instance
+    TestDataProperties testData = new TestDataProperties();
 
     @Test
     void registrationTest() {

@@ -20,10 +20,6 @@ public class TestDataMethods {
         return fakerEn.name().lastName();
     }
 
-    public static String getRandomFullName() {
-        return fakerEn.name().fullName();
-    }
-
     public static String getRandomEmail() {
         return fakerEn.internet().emailAddress();
     }

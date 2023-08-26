@@ -2,44 +2,47 @@ package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
-import com.demoqa.pages.components.ResultTableComponent;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
 
     CalendarComponent calendar = new CalendarComponent();
-    ResultTableComponent resultTable = new ResultTableComponent();
+
     SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            genderWrapper = $("#genterWrapper"),
+            genderInput = $("#genterWrapper"),
             userNumberInput = $("#userNumber"),
             birthDateInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesWrapper = $("#hobbiesWrapper"),
-            pictureUploader = $("#uploadPicture"),
-            setAddress = $("#currentAddress"),
+            hobbiesInput = $("#hobbiesWrapper"),
+            pictureUpload = $("#uploadPicture"),
+            addressInput = $("#currentAddress"),
+            state = $("#stateCity-wrapper #state"),
+            stateInput = $("#state"),
+            city = $("#stateCity-wrapper #city"),
+            cityInput = $("#city"),
+            submitButton = $("#submit"),
+            overTable = $(".table-responsive");
 
-            state = $("#state"),
-
-            stateInput = $("#stateCity-wrapper #state"),
-
-            city = $("#city"),
-
-            cityInput = $("#stateCity-wrapper #city"),
-
-            submitButton = $("#submit");
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
 
         return this;
     }
-    public RegistrationPage removeBanners() {
+
+    public RegistrationPage removeFixedBanner() {
         executeJavaScript("$('#fixedban').remove()");
+
+        return this;
+    }
+
+    public RegistrationPage removeFooter() {
         executeJavaScript("$('footer').remove()");
 
         return this;
@@ -57,14 +60,14 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setUserEmail(String value) {
+    public  RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
 
         return this;
     }
 
-    public RegistrationPage setGender(String value) {
-        genderWrapper.$(byText(value)).click();
+    public  RegistrationPage setGender(String value) {
+        genderInput.$(byText(value)).click();
 
         return this;
     }
@@ -75,57 +78,60 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setBirthDate(String day, String month, String year) {
+    public RegistrationPage setBirthDay(String month, String year, String day) {
         birthDateInput.click();
-        calendar.setDate(day, month, year);
+        calendar.setCalendarDate(month, year, day);
 
         return this;
     }
+
     public RegistrationPage setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
 
         return this;
     }
+
     public RegistrationPage setHobbies(String value) {
-        hobbiesWrapper.$(byText(value)).click();
+        hobbiesInput.$(byText(value)).click();
 
         return this;
     }
+
     public RegistrationPage uploadPicture(String value) {
-        pictureUploader.uploadFromClasspath(value);
+        pictureUpload.uploadFromClasspath(value);
 
         return this;
     }
+
     public RegistrationPage setAddress(String value) {
-        setAddress.setValue(value);
+        addressInput.setValue(value);
 
         return this;
     }
+
     public RegistrationPage setState(String value) {
         state.click();
         stateInput.$(byText(value)).click();
 
         return this;
     }
+
     public RegistrationPage setCity(String value) {
         city.click();
         cityInput.$(byText(value)).click();
 
         return this;
     }
-    public RegistrationPage clickSubmitBtn() {
-        submitButton.click();
 
-        return this;
+    public void clickOnSubmitButton() {
+
+        submitButton.click();
     }
 
-    public void checkResults(String[][] values) {
+    public RegistrationPage checkOverResults(String value, String valueCheck) {
+        overTable.$(byText(value)).parent().shouldHave(text(valueCheck));
 
-        for (String[] valuePair : values
-        ) {
-            resultTable.checkResult(valuePair[0], valuePair[1]);
-        }
-
+        return this;
     }
 
 }

@@ -3,6 +3,7 @@ package com.demoqa.tests;
 import com.demoqa.pages.RegistrationPage;
 import com.demoqa.utils.TestDataProperties;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class RegistrationTestWithFakerJava extends TestBase {
@@ -11,6 +12,7 @@ public class RegistrationTestWithFakerJava extends TestBase {
     TestDataProperties testData = new TestDataProperties();
 
     @Test
+    @Tag("remote")
     void registrationTest() {
 
         registrationPage.openPage()

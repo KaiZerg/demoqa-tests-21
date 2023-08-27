@@ -10,7 +10,7 @@ repositories {
 group 'guru.qa'
 version '1.0'
 
-def allureVersion = "2.21.0"
+def allureVersion = "2.23.0"
 
 allure {
     report {

@@ -3,12 +3,15 @@ package com.demoqa.tests;
 import com.demoqa.pages.RegistrationPage;
 import com.demoqa.utils.TestDataProperties;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
+@Feature("Проверка регистрации - с генерацией данных")
+@Owner("KaiZerg")
 public class RegistrationTestWithFakerJava extends RemoteTestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -17,6 +20,9 @@ public class RegistrationTestWithFakerJava extends RemoteTestBase {
     @Test
     @Tag("remote")
     @DisplayName("Успешная регистрация при сабмите в форму авторизации - с генерацией данных")
+    @Story("Позитивная проверка авторизации")
+    @Severity(SeverityLevel.BLOCKER)
+    @Link(value="GitHub link", url="https://github.com/KaiZerg/demoqa-tests-21/tree/remote_test")
     void registrationTest() {
         step("Открываем страницу с формой авторизации", () -> {
             registrationPage.openPage()

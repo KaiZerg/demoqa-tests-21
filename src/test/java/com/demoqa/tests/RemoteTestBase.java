@@ -16,19 +16,19 @@ import static org.asynchttpclient.util.HttpConstants.Methods.OPTIONS;
 
 public class RemoteTestBase {
     @Test
-    @Tag("remote")
+    //@Tag("remote")
     void systemPropertiesTest() {
         String browser = System.getProperty("browser", "mozilla");
     }
     @Test
-    @Tag("remote")
+    //@Tag("remote")
     void testBrowserSize() {
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
 
     }
 
     @Test
-    @Tag("remote")
+    //@Tag("remote")
     void testBrowserVersion() {
         Configuration.browserVersion = System.getProperty("browserVersion", "100.0");
     }

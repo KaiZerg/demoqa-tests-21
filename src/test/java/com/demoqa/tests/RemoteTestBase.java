@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import properties.SystemPropertiesTests;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,12 +17,12 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static org.asynchttpclient.util.HttpConstants.Methods.OPTIONS;
 
-public class RemoteTestBase {
+public class RemoteTestBase extends SystemPropertiesTests {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("remoteDriverUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions options = new ChromeOptions();

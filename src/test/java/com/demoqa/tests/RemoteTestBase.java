@@ -17,7 +17,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static org.asynchttpclient.util.HttpConstants.Methods.OPTIONS;
 
-public class RemoteTestBase extends SystemPropertiesTests {
+public class RemoteTestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";

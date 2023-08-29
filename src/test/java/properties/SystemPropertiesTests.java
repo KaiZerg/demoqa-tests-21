@@ -9,8 +9,6 @@ public class SystemPropertiesTests {
     @Tag("property")
     void systemPropertiesTest() {
         String browser = System.getProperty("browser", "mozilla");
-
-        System.out.println(browser);
     }
     @Test
     @Tag("property")
